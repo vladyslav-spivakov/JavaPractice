@@ -1,5 +1,6 @@
 package com.company.classes;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 public class Card {
@@ -17,7 +18,12 @@ public class Card {
             default -> throw new IllegalArgumentException(aSuit.length() == 0 ? "Suit can`t be blank!" : aSuit + " is not a suit");
         }
         this.suit = aSuit;
-        this.value = aNum;
+        String[] values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
+        if(Arrays.asList(values).contains(aNum)) {
+            this.value = aNum;
+        } else {
+            throw new IllegalArgumentException("Wrong card value!");
+        }
         this.isOpened = aStatus;
     }
 
@@ -29,11 +35,19 @@ public class Card {
         }
     }
 
+    public String getExactValue() {
+        return value;
+    }
+
     public void open() {
         this.isOpened = true;
     }
 
     public void close() {
         this.isOpened = false;
+    }
+
+    public boolean isOpened() {
+        return isOpened;
     }
 }
