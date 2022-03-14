@@ -11,10 +11,16 @@ public class Hand {
         cards = new ArrayList<>();
     }
 
+    public Hand(Deck deck) {
+        this();
+        this.takeCard(deck);
+        this.takeCard(deck);
+    }
+
     public void takeCard(Deck deck) {
         if(deck.getSize() == 0) {
             System.out.println("You`ve not taken a card. Deck is empty!");
-            return;
+            throw new ArrayStoreException("Deck was empty!");
         }
 
         cards.add(deck.getCard());
