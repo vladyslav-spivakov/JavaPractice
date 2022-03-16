@@ -25,7 +25,7 @@ public class Deck {
         }
     }
 
-    public void printDeck() {
+    private void printDeck() {
         System.out.print("Deck: ");
         for( var card : deck) {
             System.out.print(card.getValue() + ", ");

@@ -27,6 +27,10 @@ public class Card {
         this.isOpened = aStatus;
     }
 
+    public Card(String aSuit, String aNum) {
+        this(aSuit, aNum, true);
+    }
+
     public String getValue() {
         if(!isOpened) {
             return "XX";

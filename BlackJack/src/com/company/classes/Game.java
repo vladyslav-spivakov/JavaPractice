@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Game {
 
-    String[] interfaceCommands = { "1", "2", "q"};
+        String[] interfaceCommands = { "1", "2", "q"};
 
     public Game(){}
 
